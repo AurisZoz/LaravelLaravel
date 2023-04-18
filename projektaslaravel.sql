@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2023 at 06:28 PM
+-- Generation Time: Apr 18, 2023 at 10:57 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,36 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravelauto`
+-- Database: `projektaslaravel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `automobiliais`
+-- Table structure for table `automobiliai`
 --
 
-CREATE TABLE `automobiliais` (
-  `id` int(100) NOT NULL,
-  `vardas` text NOT NULL,
-  `pavarde` text NOT NULL,
-  `marke1` text NOT NULL,
-  `modelis1` text NOT NULL,
-  `numeris1` text NOT NULL,
-  `marke2` text NOT NULL,
-  `modelis2` text NOT NULL,
-  `numeris2` text NOT NULL,
-  `marke3` text NOT NULL,
-  `modelis3` text NOT NULL,
-  `numeris3` text NOT NULL
+CREATE TABLE `automobiliai` (
+  `marke` text NOT NULL,
+  `modelis` text NOT NULL,
+  `numeris` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `automobiliais`
+-- Dumping data for table `automobiliai`
 --
 
-INSERT INTO `automobiliais` (`id`, `vardas`, `pavarde`, `marke1`, `modelis1`, `numeris1`, `marke2`, `modelis2`, `numeris2`, `marke3`, `modelis3`, `numeris3`) VALUES
-(1, 'Jonas', 'Jonaitis', 'Audi', 'A4', 'BDF458', 'BMW', 'e46', 'FGD892', '-', '-', '-');
+INSERT INTO `automobiliai` (`marke`, `modelis`, `numeris`) VALUES
+('Audi', 'A4', 'BFC487');
 
 -- --------------------------------------------------------
 
@@ -79,6 +70,25 @@ CREATE TABLE `password_reset_tokens` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `savininkais`
+--
+
+CREATE TABLE `savininkais` (
+  `id` int(11) NOT NULL,
+  `vardas` text NOT NULL,
+  `pavarde` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `savininkais`
+--
+
+INSERT INTO `savininkais` (`id`, `vardas`, `pavarde`) VALUES
+(1, 'Jonas', 'Jonaitis');
 
 -- --------------------------------------------------------
 

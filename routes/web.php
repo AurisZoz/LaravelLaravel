@@ -1,14 +1,9 @@
 <?php
 
-use App\Http\Controllers\CalcController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AutomobiliaiController;
 use Illuminate\Support\Facades\Route;
-
-
-
-
+use App\Http\Controllers\AutomobiliaiController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SavininkaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,23 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/automobiliai',[AutomobiliaiController::class, 'index'])->name('automobiliai.index'); 
-    Route::get('/automobiliai/create',[ AutomobiliaiController::class, 'create'])->name('automobiliai.create');
-    Route::post('/automobiliai/save',[ AutomobiliaiController::class, 'save'])->name('automobiliai.save');
-    Route::get('/automobiliai/{id}/edit',[ AutomobiliaiController::class, 'edit'])->name('automobiliai.edit');
-    Route::post('/automobiliai/{id}/update',[AutomobiliaitController::class,'update'])->name('automobiliai.update');
-    Route::get('/automobiliai/{id}/delete',[AutomobiliaiController::class,'delete'])->name('automobiliai.delete');
-    Route::post('/automobiliai/search',[AutomobiliaiController::class,'search'])->name('automobiliai.search');
+Route::get('/savininkai',[SavininkaiController::class, 'index'])->name('savininkai.index');
+Route::get('/savininkai/create',[ SavininkaiController::class, 'create'])->name('savininkai.create');
+Route::post('/savininkai/save',[ SavininkaiController::class, 'save'])->name('savininkai.save');
+Route::get('/savininkai/{id}/edit',[ SavininkaiController::class, 'edit'])->name('savininkai.edit');
+Route::post('/savininkai/{id}/update',[SavininkaiController::class,'update'])->name('savininkai.update');
+Route::get('/savininkai/{id}/delete',[SavininkaiController::class,'delete'])->name('savininkai.delete');
+Route::post('/savininkai/search',[SavininkaiController::class,'search'])->name('savininkai.search');
 
-
-    Route::resource('courses', CourseController::class);
-
-Route::get('/calc/',[CalcController::class, 'showForm' ])->name("form");
-Route::post('/calc/result',[CalcController::class, 'result' ])->name("result");
+Route::resource('automobiliais', AutomobiliaiController::class);
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Auth::routes();
 
