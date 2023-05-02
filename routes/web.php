@@ -25,6 +25,9 @@ Route::get('/savininkai/{id}/delete',[SavininkaiController::class,'delete'])->na
 Route::post('/savininkai/search',[SavininkaiController::class,'search'])->name('savininkai.search');
 
 Route::resource('automobiliais', AutomobiliaiController::class);
+Route::post('/automobiliais/search',[AutomobiliaiController::class,'search'])->name('automobiliais.search');
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,3 +37,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

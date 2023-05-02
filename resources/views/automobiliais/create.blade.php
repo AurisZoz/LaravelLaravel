@@ -9,6 +9,10 @@
                     <form method="post" action="{{ route("automobiliais.store") }}">
                     @csrf
                            <div class="mb-3">
+                               <label class="form-label">ID:</label>
+                               <input class="form-control" name="id" type="text" value="" required>
+                           </div>
+                           <div class="mb-3">
                                <label class="form-label">Markė:</label>
                                <input class="form-control" name="marke" type="text" value="" required>
                            </div>

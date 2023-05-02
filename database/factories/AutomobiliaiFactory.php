@@ -25,9 +25,10 @@ class AutomobiliaiFactory extends Factory
         $v = $this->faker->vehicleArray();
 
         return [
+            'id'=>fake()->randomDigit(),
             'modelis' => $v['model'],
             'marke' => $v['brand'],
-            'numeris' => $this->faker->unique()->bothify('#######'),
+            'numeris' => $this->faker->unique()->bothify('#######')
         ];
     }
     

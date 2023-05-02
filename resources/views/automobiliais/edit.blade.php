@@ -10,6 +10,10 @@
                            @csrf
                            @method('put')
                            <div class="mb-3">
+                               <label class="form-label">ID:</label>
+                               <input class="form-control" name="id" type="text" value="{{ $automobiliai->id }}" required>
+                           </div>
+                           <div class="mb-3">
                                <label class="form-label">Markė:</label>
                                <input class="form-control" name="marke" type="text" value="{{ $automobiliai->marke }}" required>
                            </div>

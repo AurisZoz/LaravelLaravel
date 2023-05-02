@@ -15,7 +15,7 @@ class SavininkaiController extends Controller
 
     return view("savininkai.index",[
         "savininkai"=>$savininkai,
-      //  "id"=>$id,
+     //   "id"=>$id,
         "filter"=>$filter
     ]
     );
@@ -30,6 +30,7 @@ class SavininkaiController extends Controller
   public function save(Request $request)
   {
     $savininkais=new Savininkai();
+    $savininkais->id=$request->id;
     $savininkais->vardas=$request->vardas;
     $savininkais->pavarde=$request->pavarde;
     $savininkais->save();
@@ -47,6 +48,7 @@ class SavininkaiController extends Controller
   public function update($id, Request $request)
   {
     $savininkais=Savininkai::find($id);
+    $savininkais->id=$request->id;
     $savininkais->vardas=$request->vardas;
     $savininkais->pavarde=$request->pavarde;
     $savininkais->save();
@@ -61,6 +63,7 @@ class SavininkaiController extends Controller
   public function search(Request $request)
   {
     $filterSavininkai=new \stdClass();
+    $filterSavininkai->id=$request->id;
     $filterSavininkai->vardas=$request->vardas;
     $filterSavininkai->pavarde=$request->pavarde;
 
